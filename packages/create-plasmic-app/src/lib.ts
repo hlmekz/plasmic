@@ -4,6 +4,7 @@ import * as path from "upath";
 import validateProjectName from "validate-npm-package-name";
 import { ensureTsconfig, overwriteReadme } from "./utils/file-utils";
 import { detectPackageManager } from "./utils/npm-utils";
+import { sveltekitStrategy } from "./sveltekit/sveltekit";
 import { CPAStrategy } from "./utils/strategy";
 import {
   JsOrTs,
@@ -22,6 +23,8 @@ async function getCPAStrategy(platform: PlatformType): Promise<CPAStrategy> {
       return (await import("./react/react")).reactStrategy;
     case "tanstack":
       return (await import("./tanstack/tanstack")).tanstackStrategy;
+    case "sveltekit":
+      return sveltekitStrategy;
   }
 }
 
@@ -74,7 +77,7 @@ export async function create(args: CreatePlasmicAppArgs): Promise<void> {
 
   // Calling `npx create-XXX` means we don't have to keep these dependencies up to date
   banner("CREATING THE PROJECT");
-  if (!["nextjs", "gatsby", "react", "tanstack"].includes(platform)) {
+  if (!["nextjs", "gatsby", "react", "tanstack", "sveltekit"].includes(platform)) {
     throw new Error(`Unrecognized platform: ${platform}`);
   }
 
@@ -151,6 +154,8 @@ export async function create(args: CreatePlasmicAppArgs): Promise<void> {
       : platform === "gatsby"
       ? `${npmRunCmd} develop`
       : platform === "react"
+      ? `${npmRunCmd} dev`
+      : platform === "sveltekit"
       ? `${npmRunCmd} dev`
       : "";
   const relativeDir = path.relative(process.cwd(), resolvedProjectPath);

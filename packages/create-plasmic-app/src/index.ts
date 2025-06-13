@@ -33,7 +33,7 @@ const argv = yargs
   )
   .option("platform", {
     describe: "Target platform",
-    choices: ["", "nextjs", "gatsby", "react", "tanstack"],
+    choices: ["", "nextjs", "gatsby", "react", "tanstack", "sveltekit"],
   })
   .option("scheme", {
     describe: "Plasmic integration scheme",
@@ -182,6 +182,10 @@ async function run(): Promise<void> {
         name: "React (Vite)",
         short: "React (Vite)",
         value: "react",
+      },
+      {
+        name: "SvelteKit",
+        value: "sveltekit",
       },
     ],
     default: "nextjs",

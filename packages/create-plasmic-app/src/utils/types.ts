@@ -1,5 +1,5 @@
 export type JsOrTs = "js" | "ts";
-export type PlatformType = "nextjs" | "gatsby" | "react" | "tanstack";
+export type PlatformType = "nextjs" | "gatsby" | "react" | "tanstack" | "sveltekit";
 export type PlatformOptions = {
   nextjs?: {
     appDir: boolean;
