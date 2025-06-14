@@ -1,0 +1,45 @@
+{
+  "platform": "react",
+  "scheme": "codegen",
+  "projectId": "REPLACE_WITH_REAL_PROJECT_ID",
+  "projectApiToken": "REPLACE_WITH_REAL_API_TOKEN_IF_NEEDED",
+  "projects": [
+    {
+      "projectId": "REPLACE_WITH_REAL_PROJECT_ID",
+      "projectApiToken": "REPLACE_WITH_REAL_API_TOKEN_IF_NEEDED"
+    }
+  ],
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "style": "css"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": ""
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src",
+  "defaultPlasmicDir": "./components/plasmic",
+  "globalVariants": {
+    "variantGroups": []
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../static",
+    "publicUrlPrefix": "/"
+  },
+  "nextjsConfig": {
+    "pagesDir": "../src/pages"
+  },
+  "gatsbyConfig": {
+    "pagesDir": "../src/pages"
+  },
+  "host": {
+    "url": "http://localhost:5173/plasmic-host"
+  },
+  "cliVersion": "^0.x.x"
+}

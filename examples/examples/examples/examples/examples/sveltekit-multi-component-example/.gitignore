@@ -1,0 +1,21 @@
+/.svelte-kit
+/build
+/node_modules
+/.env
+/.env.*
+!/.env.example
+
+# Output of vite build
+/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE / Editor specific
+.vscode
+.idea
+*.project
+*.swp
